@@ -7,11 +7,11 @@ const twoSum = (nums, target) => {
   let firstIndex = null;
   let secondIndex = null;
   for (let i = 0; i < nums.length; i++) {
-      const subtracted = target - nums[i];
-      if (nums.includes(subtracted)) {
-          firstIndex = i;
-          secondIndex = nums.indexOf(subtracted);
-      }
+    const subtracted = target - nums[i];
+    if (nums.includes(subtracted)) {
+      firstIndex = i;
+      secondIndex = nums.indexOf(subtracted);
+    }
   }
 
   indexArray.push(firstIndex);
