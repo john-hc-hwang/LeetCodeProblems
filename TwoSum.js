@@ -3,7 +3,6 @@
 // return value is array of indices adding up to the target integer
 
 const twoSum = (nums, target) => {
-  const indexArray = [];
   let firstIndex = null;
   let secondIndex = null;
   for (let i = 0; i < nums.length; i++) {
@@ -14,8 +13,17 @@ const twoSum = (nums, target) => {
     }
   }
 
-  indexArray.push(firstIndex);
-  indexArray.push(secondIndex);
-
-  return indexArray;
+  return [firstIndex, secondIndex];
 };
+
+// Alternate solution
+
+// var twoSum = function(nums, target) {
+//   for(let i = 0; i < nums.length; i++){
+//       for(let j = i+1; j < nums.length; j++){
+//           if(nums[i] + nums[j] === target){
+//               return [i, j]
+//           }
+//       }
+//   }
+// };
