@@ -12,44 +12,35 @@
  */
 var mergeTwoLists = function (l1, l2) {
   // Check if either of the lists is null
-  if (!l1) {
-    return l2;
-  }
-  if (!l2) {
-    return l1;
-  }
-  let head = null;
-  // Choose head which is smaller of the two lists
-  if (l1.val < l2.val) {
-    head = new ListNode(l1.val);
-    l1 = l1.next;
-  } else {
-    head = new ListNode(l2.val);
-    l2 = l2.next;
-  }
-  // Loop until any of the list becomes null
+  if (!l1) return l2;
+  if (!l2) return l1;
+  // this new ListNode's value does not matter since we will be returning current.next
+  let head = new ListNode(99);
+  let current = head;
+
   while (l1 && l2) {
-    if (l1.val < l2.val) {
+    if (l1.val < l2.value) {
       head.next = new ListNode(l1.val);
-      l1 = l1.next;
       head = head.next;
-    } else {
+      l1 = li.next;
+    } else if (l2.val < l1.val) {
       head.next = new ListNode(l2.val);
-      l2 = l2.next;
       head = head.next;
+      l2 = l2.next;
+      // if l1.val and l2.val are equal then traverse through both linked list
+    } else {
+      head.next = new ListNode(l1.val);
+      head = head.next;
+      l1 = li.next;
+
+      head.next = new ListNode(l2.val);
+      head = head.next;
+      l2 = l2.next;
     }
   }
-  // Add all the nodes in l1, if remaining
-  while (l1) {
-    head.next = new ListNode(l1.val);
-    l1 = l1.next;
-    head = head.next;
-  }
-  // Add all the nodes in l2, if remaining
-  while (l2) {
-    head.next = new ListNode(l2.val);
-    l2 = l2.next;
-    head = head.next;
-  }
-  return head;
+
+  if (l1) head.next = li;
+  if (l2) head.next = l2;
+
+  return current.next;
 };
