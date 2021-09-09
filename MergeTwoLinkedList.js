@@ -12,12 +12,15 @@
  */
 var mergeTwoLists = function (l1, l2) {
   // Check if either of the lists is null
+  // if so, return the other list
   if (!l1) return l2;
   if (!l2) return l1;
   // this new ListNode's value does not matter since we will be returning current.next
+  // therefore we can set it to an arbitrary value 99
   let head = new ListNode(99);
   let current = head;
 
+  // if either l1 or l2 is null, the while loop will stop
   while (l1 && l2) {
     if (l1.val < l2.value) {
       head.next = new ListNode(l1.val);
@@ -39,6 +42,7 @@ var mergeTwoLists = function (l1, l2) {
     }
   }
 
+  // if there is anything left in either l1 or l2 we add it to the end of the list
   if (l1) head.next = li;
   if (l2) head.next = l2;
 
