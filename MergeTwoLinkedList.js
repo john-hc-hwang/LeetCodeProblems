@@ -10,7 +10,7 @@
  * param {ListNode} l2
  * return {ListNode}
  */
-var mergeTwoLists = function (l1, l2) {
+const mergeTwoLists = (l1, l2) => {
   // Check if either of the lists is null
   // if so, return the other list
   if (!l1) return l2;
