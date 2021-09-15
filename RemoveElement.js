@@ -10,3 +10,16 @@ var removeElement = function (nums, val) {
   k = k - removedCounter;
   return k;
 };
+
+// better solution
+var removeElement = function (nums, val) {
+  let i = 0;
+
+  for (let data of nums) {
+    if (data !== val) {
+      nums[i++] = data;
+    }
+  }
+
+  return i;
+};
