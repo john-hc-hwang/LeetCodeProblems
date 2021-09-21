@@ -1,3 +1,6 @@
+// To solve this problem, remember stacks and queues data structure
+// FILO, first in last out
+
 const isValid = s => {
   const stack = [];
   for (let i = 0; i < s.length; i++) {
